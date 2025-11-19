@@ -1,0 +1,49 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.bak
+*.backup
+.cache/
+
+# Environment files (though you might want to keep some)
+# Uncomment if needed:
+# .env
+# .env.local
+
+# Build artifacts (if any)
+build/
+dist/
+
+# Package manager files (if you add them later)
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Homebrew cache (if running locally)
+.cache/Homebrew/
+
