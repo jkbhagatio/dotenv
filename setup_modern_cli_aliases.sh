@@ -77,24 +77,16 @@ else
     echo "   WARNING: dysk not found. Skipping df alias."
 fi
 
-if command -v bottom &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias top="bottom"                       # Use bottom instead of top'
+if command -v btm &> /dev/null; then
+    ALIAS_BLOCK+=$'\nalias top="btm"                          # Use btm instead of 'top'
 else
     echo "   WARNING: bottom not found. Skipping top alias."
 fi
 
-# 3. Safety & Convenience
 if command -v xcp &> /dev/null; then
     ALIAS_BLOCK+=$'\nalias cp="xcp"                           # Use xcp for copying (progress bars)'
 else
     echo "   WARNING: xcp not found. Skipping cp alias."
-fi
-
-if command -v sgpt &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias ask="sgpt"                         # AI Chat'
-    ALIAS_BLOCK+=$'\nalias s="sgpt --shell"                   # Generate Shell Commands (e.g. s "kill all node")'
-else
-    echo "   WARNING: sgpt not found. Skipping ask/s aliases."
 fi
 
 if command -v fastfetch &> /dev/null; then
@@ -105,13 +97,8 @@ fi
 
 ALIAS_BLOCK+=$'\n\n# --- END MODERN CLI TOOLS ---'
 
-# Check if we already added them to avoid duplication
-if grep -q "MODERN CLI TOOLS CONFIG" "$SHELL_CONFIG"; then
-    echo "   [OK] Aliases already present in $SHELL_CONFIG. Skipping append."
-else
-    echo "$ALIAS_BLOCK" >> "$SHELL_CONFIG"
-    echo "   Aliases and Init scripts appended to $SHELL_CONFIG"
-fi
+echo "$ALIAS_BLOCK" >> "$SHELL_CONFIG"
+echo "   Aliases and Init scripts appended to $SHELL_CONFIG"
 
 echo "-----------------------------------------------------"
 echo "DONE!"

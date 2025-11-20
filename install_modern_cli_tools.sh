@@ -24,7 +24,7 @@ TOOLS=(
     "fd"           # find replacement
     "fzf"          # Fuzzy finder
     "atuin"        # History replacement
-    "bottom"         # System monitor (top replacement)
+    "bottom"       # System monitor (top replacement)
     "ripgrep"      # grep replacement
     "fselect"      # SQL for files
     "grex"         # Regex generator
@@ -45,7 +45,11 @@ for tool in "${TOOLS[@]}"; do
         echo "   [OK] $tool is already installed."
     else
         echo "   Installing $tool..."
-        brew install "$tool"
+        if brew install "$tool"; then
+            echo "   Successfully installed $tool."
+        else
+            echo "   WARNING: Failed to install $tool. Continuing with next tool."
+        fi
     fi
 done
 
@@ -70,14 +74,10 @@ if ! command -v choose &> /dev/null; then
     brew install choose-rust 2>/dev/null || brew install choose 2>/dev/null
 fi
 
-# 4. Shell-GPT (Python)
+# 4. sgpt (Command-line AI assistant)
 if ! command -v sgpt &> /dev/null; then
-    echo "   Installing Shell-GPT (sgpt)..."
-    if ! command -v pipx &> /dev/null; then
-        brew install pipx
-        pipx ensurepath
-    fi
-    pipx install shell-gpt
+    echo "   Installing sgpt..."
+    brew install tbckr/tap/sgpt || echo "      WARNING: Could not install sgpt."
 fi
 
 echo "Installation complete!"
