@@ -40,57 +40,64 @@ eval "\$(atuin init $(basename "$SHELL"))"
 EOM
 
 # Check each tool and add aliases conditionally
+
+if command -v zoxide &> /dev/null; then
+    ALIAS_BLOCK+=$'\nalias cd="zoxide"                         # Use zoxide instead of cd
+else
+    echo "   WARNING: zoxide not found. Skipping cd alias."
+fi
+
 if command -v eza &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias ls="eza --icons"                   # Use eza with icons'
-    ALIAS_BLOCK+=$'\nalias ll="eza -l --icons --git -a"       # Long list, git status, all files'
+    ALIAS_BLOCK+=$'\nalias ls="eza --icons"                   # Use eza with icons
+    ALIAS_BLOCK+=$'\nalias ll="eza -l --icons --git -a"       # Long list, git status, all files
 else
     echo "   WARNING: eza not found. Skipping ls/ll aliases."
 fi
 
 if command -v bat &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias cat="bat"                          # Use bat instead of cat'
+    ALIAS_BLOCK+=$'\nalias cat="bat"                          # Use bat instead of cat
 else
     echo "   WARNING: bat not found. Skipping cat alias."
 fi
 
 if command -v rg &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias grep="rg"                          # Use ripgrep instead of grep'
+    ALIAS_BLOCK+=$'\nalias grep="rg"                          # Use ripgrep instead of grep
 else
     echo "   WARNING: ripgrep (rg) not found. Skipping grep alias."
 fi
 
 if command -v fd &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias find="fd"                          # Use fd instead of find'
+    ALIAS_BLOCK+=$'\nalias find="fd"                          # Use fd instead of find
 else
     echo "   WARNING: fd not found. Skipping find alias."
 fi
 
 if command -v dust &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias du="dust"                          # Use dust for disk usage'
+    ALIAS_BLOCK+=$'\nalias du="dust"                          # Use dust for disk usage
 else
     echo "   WARNING: dust not found. Skipping du alias."
 fi
 
 if command -v dysk &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias df="dysk"                          # Use dysk for disk free'
+    ALIAS_BLOCK+=$'\nalias df="dysk"                          # Use dysk for disk free
 else
     echo "   WARNING: dysk not found. Skipping df alias."
 fi
 
 if command -v btm &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias top="btm"                          # Use btm instead of 'top'
+    ALIAS_BLOCK+=$'\nalias top="btm"                          # Use btm instead of top
 else
     echo "   WARNING: bottom not found. Skipping top alias."
 fi
 
-if command -v xcp &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias cp="xcp"                           # Use xcp for copying (progress bars)'
+if command -v fcp &> /dev/null; then
+    ALIAS_BLOCK+=$'\nalias cp="fcp"                           # Use fcp for copying (progress bars)
 else
-    echo "   WARNING: xcp not found. Skipping cp alias."
+    echo "   WARNING: fcp not found. Skipping cp alias."
 fi
 
 if command -v fastfetch &> /dev/null; then
-    ALIAS_BLOCK+=$'\nalias sys="fastfetch"                    # System Info'
+    ALIAS_BLOCK+=$'\nalias sys="fastfetch"                    # System Info
 else
     echo "   WARNING: fastfetch not found. Skipping sys alias."
 fi

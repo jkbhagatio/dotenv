@@ -61,10 +61,10 @@ if ! command -v rnr &> /dev/null; then
     brew install rnr 2>/dev/null || cargo install rnr 2>/dev/null || echo "      WARNING: Could not install rnr (requires cargo or brew tap)."
 fi
 
-# 2. xcp (Copy)
-if ! command -v xcp &> /dev/null; then
-    echo "   Installing xcp..."
-    brew install xcp 2>/dev/null || cargo install xcp 2>/dev/null || echo "      WARNING: Could not install xcp."
+# 2. fcp (Copy)
+if ! command -v fcp &> /dev/null; then
+    echo "   Installing fcp..."
+    brew install fcp 2>/dev/null || cargo install fcp 2>/dev/null || echo "      WARNING: Could not install fcp."
 fi
 
 # 3. choose (Cut replacement)

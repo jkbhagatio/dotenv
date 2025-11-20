@@ -43,7 +43,7 @@ Shell scripts to install and configure modern command-line tools that replace tr
 - **fd**: A simple, fast alternative to `find` that simplifies searching for files by auto-ignoring hidden files and `.gitignore` patterns, and using a colorized, user-friendly output format.
 - **fzf**: A general-purpose "fuzzy finder" that lets you interactively filter and select items from any list (like files, command history, or processes) by typing approximate search terms.
 - **atuin**: A replacement for your existing shell history that stores commands in a searchable database; it allows you to sync history across machines and filter past commands by directory, time, or exit status.
-- **btop**: A polished, visually rich alternative to `top` and `htop` that monitors system resources (CPU, memory, network, disk) with a responsive graphical UI and mouse support.
+- **bottom**: A polished, visually rich alternative to `top` and `htop` that monitors system resources (CPU, memory, network, disk) with a responsive graphical UI and mouse support.
 - **ripgrep**: A line-oriented search tool that replaces `grep`; it is incredibly fast and respects your `.gitignore` rules automatically, making it the gold standard for searching text within codebases.
 - **fselect**: A unique file-finding tool that allows you to query your filesystem using SQL-like syntax (e.g., `select name from . where size > 1gb`), offering a powerful alternative to complex `find` flags.
 - **grex**: A helper tool that automatically generates a single regular expression (regex) capable of matching a specific set of test cases or strings you provide as input.
