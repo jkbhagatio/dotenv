@@ -17,25 +17,26 @@ brew update
 
 # The Optimized List (Redundancy removed)
 TOOLS=(
-    "eza"          # ls replacement
-    "zoxide"       # cd replacement
-    "bat"          # cat replacement
-    "dust"         # du replacement
-    "fd"           # find replacement
-    "fzf"          # Fuzzy finder
     "atuin"        # History replacement
+    "bat"          # cat replacement
     "bottom"       # System monitor (top replacement)
-    "ripgrep"      # grep replacement
-    "fselect"      # SQL for files
-    "grex"         # Regex generator
+    "dust"         # du replacement
     "dysk"         # df replacement
+    "eza"          # ls replacement
     "fastfetch"    # System info
+    "fd"           # find replacement
+    "fselect"      # SQL for files
+    "fzf"          # Fuzzy finder
+    "grex"         # Regex generator
+    "macchina"     # System info fetcher
     "mdbook"       # Markdown docs
-    "ouch"         # Compression
     "monolith"     # Web archiving
+    "ouch"         # Compression
+    "qsv"          # CSV utils
+    "ripgrep"      # grep replacement
     "sd"           # sed replacement
     "watchexec"    # Watch runner
-    "qsv"          # CSV utils
+    "zoxide"       # cd replacement
 )
 
 echo "Installing Core Tools via Homebrew..."
